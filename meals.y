@@ -25,19 +25,19 @@ int yylex();
 
 /* descriptions of expected inputs     corresponding actions (in C) */
 
-day: list_of_meals { }
+day: list_of_meals {if(19<$1)printf("Too Many Calories: total is %d",$1); }
 
-list_of_meals:  list_of_meals meal {printf("1");}
+list_of_meals:  list_of_meals meal {$$=$1+$2;}
 
 list_of_meals:  /* empty  */ {$$=0;}
 
-meal: START_MEAL list_of_servings END_MEAL {printf("3");}
+meal: START_MEAL list_of_servings END_MEAL {$$=$2; printf("total in meal is %d",$2);}
 
-list_of_servings: list_of_servings ',' serving {printf("4");}
+list_of_servings: list_of_servings ',' serving {$$=$1+$3;}
 
-list_of_servings: serving {printf("5 test"); printf("   OREL  %d %d  OREL  ",$1,FRUIT); if($1==FRUIT)printf("fruit!!!");}
+list_of_servings: serving {$$=$1;}
 
-serving:  VEGETABLE {$$=1;} | FRUIT {$$=2;} | MEAT {$$=4;} | BREAD {$$=3;} | DESSERT {printf("\nhere is lex %d\n",yylval); $$=DESSERT;}
+serving:  VEGETABLE {$$=1;} | FRUIT {$$=2;} | MEAT {$$=4;} | BREAD {$$=3;} | DESSERT {printf("\nhere is lex %d\n",yylval.food); $$=yylval.food;}
 
 %%                     /* C code */
 

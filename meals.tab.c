@@ -1343,13 +1343,13 @@ yyreduce:
         case 2:
 /* Line 1792 of yacc.c  */
 #line 28 "meals.y"
-    { }
+    {if(19<(yyvsp[(1) - (1)].totalCalories))printf("Too Many Calories: total is %d",(yyvsp[(1) - (1)].totalCalories)); }
     break;
 
   case 3:
 /* Line 1792 of yacc.c  */
 #line 30 "meals.y"
-    {printf("1");}
+    {(yyval.totalCalories)=(yyvsp[(1) - (2)].totalCalories)+(yyvsp[(2) - (2)].totalCalories);}
     break;
 
   case 4:
@@ -1361,19 +1361,19 @@ yyreduce:
   case 5:
 /* Line 1792 of yacc.c  */
 #line 34 "meals.y"
-    {printf("3");}
+    {(yyval.totalCalories)=(yyvsp[(2) - (3)].totalCalories); printf("total in meal is %d",(yyvsp[(2) - (3)].totalCalories));}
     break;
 
   case 6:
 /* Line 1792 of yacc.c  */
 #line 36 "meals.y"
-    {printf("4");}
+    {(yyval.totalCalories)=(yyvsp[(1) - (3)].totalCalories)+(yyvsp[(3) - (3)].totalCalories);}
     break;
 
   case 7:
 /* Line 1792 of yacc.c  */
 #line 38 "meals.y"
-    {printf("5 test"); printf("   OREL  %d %d  OREL  ",(yyvsp[(1) - (1)].totalCalories),FRUIT); if((yyvsp[(1) - (1)].totalCalories)==FRUIT)printf("fruit!!!");}
+    {(yyval.totalCalories)=(yyvsp[(1) - (1)].totalCalories);}
     break;
 
   case 8:
@@ -1403,7 +1403,7 @@ yyreduce:
   case 12:
 /* Line 1792 of yacc.c  */
 #line 40 "meals.y"
-    {printf("\nhere is lex %d\n",yylval); (yyval.totalCalories)=DESSERT;}
+    {printf("\nhere is lex %d\n",yylval.food); (yyval.totalCalories)=yylval.food;}
     break;
 
 

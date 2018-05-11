@@ -24,8 +24,8 @@ broccoli
 
 "bread"					{return BREAD;}
 
-"vanilla ice cream"		{return DESSERT;}
-"chocolate ice cream"	{return DESSERT;}
+"vanilla ice cream"		{yylval.food=7; return DESSERT;}
+"chocolate ice cream"	{yylval.food=6; return DESSERT;}
 "cake"					{yylval.food=5; return DESSERT;}
 
 [,]     { return yytext[0]; }
