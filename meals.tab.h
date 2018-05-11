@@ -62,7 +62,7 @@ typedef union YYSTYPE
 {
 /* Line 2058 of yacc.c  */
 #line 9 "meals.y"
-int totalCalories; int fruitVegtables; int desserts; int food; 
+int totalCalories; float desserts; long mealNumber; int food; 
 
 /* Line 2058 of yacc.c  */
 #line 69 "meals.tab.h"

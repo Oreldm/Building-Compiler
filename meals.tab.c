@@ -124,7 +124,7 @@ typedef union YYSTYPE
 {
 /* Line 387 of yacc.c  */
 #line 9 "meals.y"
-int totalCalories; int fruitVegtables; int desserts; int food; 
+int totalCalories; float desserts; long mealNumber; int food; 
 
 /* Line 387 of yacc.c  */
 #line 131 "meals.tab.c"
@@ -445,8 +445,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    28,    28,    30,    32,    34,    36,    38,    40,    40,
-      40,    40,    40
+       0,    26,    26,    28,    30,    32,    34,    36,    38,    38,
+      38,    38,    38
 };
 #endif
 
@@ -1342,68 +1342,68 @@ yyreduce:
     {
         case 2:
 /* Line 1792 of yacc.c  */
-#line 28 "meals.y"
+#line 26 "meals.y"
     {if(19<(yyvsp[(1) - (1)].totalCalories))printf("Too Many Calories: total is %d",(yyvsp[(1) - (1)].totalCalories)); }
     break;
 
   case 3:
 /* Line 1792 of yacc.c  */
-#line 30 "meals.y"
-    {(yyval.totalCalories)=(yyvsp[(1) - (2)].totalCalories)+(yyvsp[(2) - (2)].totalCalories);}
+#line 28 "meals.y"
+    {(yyval.totalCalories)=(yyvsp[(1) - (2)].totalCalories)+(yyvsp[(2) - (2)].totalCalories); yylval.mealNumber=yylval.mealNumber+1;  printf("total in meal %d\n",yylval.mealNumber);}
     break;
 
   case 4:
 /* Line 1792 of yacc.c  */
-#line 32 "meals.y"
+#line 30 "meals.y"
     {(yyval.totalCalories)=0;}
     break;
 
   case 5:
 /* Line 1792 of yacc.c  */
-#line 34 "meals.y"
-    {(yyval.totalCalories)=(yyvsp[(2) - (3)].totalCalories); printf("total in meal is %d",(yyvsp[(2) - (3)].totalCalories));}
+#line 32 "meals.y"
+    {(yyval.totalCalories)=(yyvsp[(2) - (3)].totalCalories); printf("total in meal is %d \n",(yyvsp[(2) - (3)].totalCalories));}
     break;
 
   case 6:
 /* Line 1792 of yacc.c  */
-#line 36 "meals.y"
+#line 34 "meals.y"
     {(yyval.totalCalories)=(yyvsp[(1) - (3)].totalCalories)+(yyvsp[(3) - (3)].totalCalories);}
     break;
 
   case 7:
 /* Line 1792 of yacc.c  */
-#line 38 "meals.y"
+#line 36 "meals.y"
     {(yyval.totalCalories)=(yyvsp[(1) - (1)].totalCalories);}
     break;
 
   case 8:
 /* Line 1792 of yacc.c  */
-#line 40 "meals.y"
+#line 38 "meals.y"
     {(yyval.totalCalories)=1;}
     break;
 
   case 9:
 /* Line 1792 of yacc.c  */
-#line 40 "meals.y"
+#line 38 "meals.y"
     {(yyval.totalCalories)=2;}
     break;
 
   case 10:
 /* Line 1792 of yacc.c  */
-#line 40 "meals.y"
+#line 38 "meals.y"
     {(yyval.totalCalories)=4;}
     break;
 
   case 11:
 /* Line 1792 of yacc.c  */
-#line 40 "meals.y"
+#line 38 "meals.y"
     {(yyval.totalCalories)=3;}
     break;
 
   case 12:
 /* Line 1792 of yacc.c  */
-#line 40 "meals.y"
-    {printf("\nhere is lex %d\n",yylval.food); (yyval.totalCalories)=yylval.food;}
+#line 38 "meals.y"
+    {yylval.desserts=1; printf("\n - here is lex dessert %f\n here is calories %d\n",yylval.desserts,yylval.food); (yyval.totalCalories)=yylval.food;}
     break;
 
 
@@ -1640,7 +1640,7 @@ yyreturn:
 
 
 /* Line 2055 of yacc.c  */
-#line 42 "meals.y"
+#line 40 "meals.y"
                      /* C code */
 
 

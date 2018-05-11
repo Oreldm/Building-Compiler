@@ -874,7 +874,7 @@ YY_RULE_SETUP
 case 16:
 YY_RULE_SETUP
 #line 29 "meals.l"
-{yylval.food=5; return DESSERT;}
+{yylval.desserts=1; yylval.food=5; return DESSERT;}
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
