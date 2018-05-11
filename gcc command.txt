@@ -1,0 +1,7 @@
+flex\win_bison.exe -d meals.y
+
+flex\win_flex.exe meals.l
+
+flex\gcc.exe.lnk -o C:\Users\h1z1\Desktop\homework\meal.exe C:\Users\h1z1\Desktop\homework\lex.yy.c C:\Users\h1z1\Desktop\homework\meals.tab.c
+
+meal.exe
