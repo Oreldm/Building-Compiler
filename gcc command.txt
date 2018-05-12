@@ -9,3 +9,10 @@ meal.exe
 
 
 C:\Users\h1z1\Documents\GitHub\Building-Compiler
+
+
+
+linux command:
+Bison -d meals.y
+Flex meals.l
+Gcc lex.yy.c meals.tab.c

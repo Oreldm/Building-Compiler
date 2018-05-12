@@ -26,7 +26,7 @@ broccoli
 
 "vanilla ice cream"		{yylval.food=7; return DESSERT;}
 "chocolate ice cream"	{yylval.food=6; return DESSERT;}
-"cake"					{yylval.desserts=1; yylval.food=5; return DESSERT;}
+"cake"					{yylval.food=5; return DESSERT;}
 
 [,]     { return yytext[0]; }
 [\t\n ]+ /* skip white space */
